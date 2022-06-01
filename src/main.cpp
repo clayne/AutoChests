@@ -52,7 +52,13 @@ static void SKSEMessageHandler(SKSE::MessagingInterface::Message* message)
 	switch (message->type) {
 	case SKSE::MessagingInterface::kDataLoaded:
 		AutoChestsHook::Hook();
-		//PlayerCharacterHook::Hook();
+		AlchemyHook::Hook();
+#ifdef DEBUG
+		PlayerCharacterHook::Hook();
+#endif  // DEBUG
+
+		
+
 		break;
 	}
 }
